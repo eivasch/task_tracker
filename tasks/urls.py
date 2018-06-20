@@ -1,6 +1,6 @@
 from django.conf.urls import url
 
-from views import create_task, get_task_info, update_task, delete_task, get_filtered_tasks
+from .views import create_task, get_task_info, update_task, delete_task, get_filtered_tasks
 
 urlpatterns = [
     url(r'^create(/)?$', create_task),

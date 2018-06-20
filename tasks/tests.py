@@ -58,7 +58,7 @@ class ApiTaskTestCase(TestCase):
         origin_description = data.pop('description')
 
         self.assertDictEqual(response_data, data)
-        self.assertItemsEqual(response_descriptions, origin_description)
+        self.assertSetEqual(set(response_descriptions), set(origin_description))
 
     def test_update_task(self):
         data = {"name": "Task1",
@@ -104,7 +104,7 @@ class ApiTaskTestCase(TestCase):
         origin_description = data.pop('description')
 
         self.assertDictEqual(response_data, data)
-        self.assertItemsEqual(response_descriptions, origin_description)
+        self.assertSetEqual(set(response_descriptions), set(origin_description))
 
     def test_delete_task(self):
         data = {"name": "Task1",
@@ -178,4 +178,4 @@ class ApiTaskTestCase(TestCase):
             origin_data['comment'] = []
 
             self.assertDictEqual(response_data, origin_data)
-            self.assertItemsEqual(response_descriptions, origin_description)
+            self.assertSetEqual(set(response_descriptions), set(origin_description))

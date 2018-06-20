@@ -1,4 +1,4 @@
-from models import Task, TaskDescription
+from .models import Task, TaskDescription
 from comments.models import Comment
 
 from rest_framework import serializers
